@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onewin Basketball Foundation</title>
+  <link rel="icon" type="image/png" href="img/file_00000000da547243b186fd3eae3d44c4.png">
+  
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/c4b4a10a19.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap (for carousel) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="academy.css">
+</head>
+<body>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div id="scroll-bar"></div>
+
+<!-- ===== COURT CANVAS ===== -->
+<canvas id="court-canvas" aria-hidden="true"></canvas>
+
+<!-- ===== CURSOR BALL (desktop) ===== -->
+<div id="cursor-ball" aria-hidden="true"></div>
+
+<!-- ===== THEME TOGGLE ===== -->
+<button id="theme-btn" aria-label="Toggle light/dark mode" title="Toggle theme">☀️</button>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="main-nav">
+  <a href="#home" class="logo-container">
+    <img src="img/file_00000000da547243b186fd3eae3d44c4.png" alt="Onewin Logo">
+    <p class="logo-text">Onewin<br>Basketball Foundation</p>
+  </a>
+  <!-- Desktop links -->
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about-us">About Us</a></li>
+    <li><a href="#stars">Stars</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <!-- Hamburger -->
+  <button class="ham" id="ham-btn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#home">Home</a>
+  <a href="#about-us">About Us</a>
+  <a href="#stars">Stars</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- =====================================================
+     CHAPTER 1 — HERO
+     ===================================================== -->
+<section id="home">
+  <div class="hero-bg" role="img" aria-label="Basketball court background"></div>
+
+  <!-- Animated court lines -->
+  <svg class="hero-court-svg" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="1" aria-hidden="true">
+    <circle cx="200" cy="350" r="100"/>
+    <circle cx="200" cy="350" r="6"/>
+    <line x1="0" y1="350" x2="400" y2="350"/>
+    <path d="M50 650 Q50 430 200 430 Q350 430 350 650"/>
+    <path d="M50 50 Q50 270 200 270 Q350 270 350 50"/>
+    <rect x="120" y="500" width="160" height="150"/>
+    <rect x="120" y="50" width="160" height="150"/>
+    <path d="M120 500 Q200 440 280 500" stroke-dasharray="6 5"/>
+    <path d="M120 200 Q200 260 280 200" stroke-dasharray="6 5"/>
+    <line x1="0" y1="30" x2="400" y2="30"/>
+    <line x1="0" y1="670" x2="400" y2="670"/>
+  </svg>
+
+  <!-- Spark particles -->
+  <div class="hero-sparks" id="hero-sparks" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-chapter reveal">
+      <span class="dot"></span>
+      Chapter 1 · Kaduna, Nigeria
+    </div>
+    <h1 class="reveal d1">
+      ONEWIN
+      <span class="line-red">BASKETBALL</span>
+      <span class="line-small">FOUNDATION</span>
+    </h1>
+    <p class="hero-slogan reveal d2">What time is it? My time is now!!!</p>
+    <p class="hero-sub reveal d2">We prepare you to be the best basketball player</p>
+    <p class="hero-subtext reveal d2">Shine and become a winner through basketball</p>
+    <a href="#contact" class="hero-cta reveal d3">
+      <i class="fa-solid fa-basketball" aria-hidden="true"></i>
+      Join the Family
+    </a>
+  </div>
+
+  <!-- Decorative ball -->
+  <div class="hero-ball-deco" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" stroke="#e86820" stroke-width="2.5"/>
+      <path d="M100 5 Q185 100 100 195" stroke="#e86820" stroke-width="2"/>
+      <path d="M100 5 Q15 100 100 195" stroke="#e86820" stroke-width="2"/>
+      <path d="M5 100 Q100 28 195 100" stroke="#e86820" stroke-width="2"/>
+      <path d="M5 100 Q100 172 195 100" stroke="#e86820" stroke-width="2"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Mon &amp; Thu · 4 PM</span><span class="sep">⬥</span>
+    <span>Saturday · 7 AM</span><span class="sep">⬥</span>
+    <span>FHE Goningora, Kaduna</span><span class="sep">⬥</span>
+    <span>Character · Discipline · Excellence</span><span class="sep">⬥</span>
+    <span>Join the Winning Team</span><span class="sep">⬥</span>
+    <span>Mon &amp; Thu · 4 PM</span><span class="sep">⬥</span>
+    <span>Saturday · 7 AM</span><span class="sep">⬥</span>
+    <span>FHE Goningora, Kaduna</span><span class="sep">⬥</span>
+    <span>Character · Discipline · Excellence</span><span class="sep">⬥</span>
+    <span>Join the Winning Team</span><span class="sep">⬥</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     CHAPTER 2 — ABOUT US
+     ===================================================== -->
+<section id="about-us">
+  <div class="section-header reveal">
+    <div class="story-tag">
+      <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+      Chapter 2 · Our Story
+    </div>
+    <h2>About <span class="accent">Us</span></h2>
+    <p class="section-intro">Onewin Basketball Foundation is an academy focused on the empowerment of youths and wards through basketball. Coach Carter, the CEO, has been instrumental in actualizing the vision of training youths not only on the court, but in character development and guidance.</p>
+  </div>
+
+  <!-- Gallery — 6 photos -->
+  <div class="history-gallery reveal">
+    <div class="gallery-card"><img src="img/Snapchat-1081048869.jpg" alt="Academy History 1" loading="lazy"></div>
+    <div class="gallery-card"><img src="img/Snapchat-2133032826.jpg" alt="Academy History 2" loading="lazy"></div>
+    <div class="gallery-card"><img src="img/IMG-20260530-WA0040.jpg" alt="Academy History 3" loading="lazy"></div>
+    <div class="gallery-card"><img src="img/IMG-20260530-WA0052.jpg" alt="Academy History 4" loading="lazy"></div>
+    <div class="gallery-card"><img src="img/IMG-20260530-WA0066.jpg" alt="Academy History 5" loading="lazy"></div>
+  </div>
+
+  <!-- Trainers -->
+  <div class="trainers-section-header reveal">
+    <div class="story-tag">
+      <i class="fa-solid fa-whistle" aria-hidden="true"></i>
+      Chapter 3 · The Coaching Staff
+    </div>
+    <h2>Our <span class="accent">Trainers</span></h2>
+    <p class="section-intro">Our success and growth are deeply indebted to our passionate mentors — nothing short of family to us.</p>
+  </div>
+
+  <div class="trainers-grid">
+    <div class="trainer-card reveal">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0008.jpg" alt="Coach Carter" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Coach Carter</h3>
+        <p class="role">CEO &amp; Founder</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">01</span>
+    </div>
+    <div class="trainer-card reveal d1">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0069.jpg" alt="Coach Abuchi" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Coach Abuchi</h3>
+        <p class="role">Drills &amp; Conditioning</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">02</span>
+    </div>
+    <div class="trainer-card reveal d2">
+      <div class="trainer-img-wrapper"><img src="img/ChatGPT Image May 21, 2026, 12_26_46 PM.png" alt="Coach Fungai" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Coach Fungai</h3>
+        <p class="role">Senior Coach &amp; Events</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">03</span>
+    </div>
+    <div class="trainer-card reveal d3">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0058.jpg" alt="Coach Jideofor" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Coach Jideofor</h3>
+        <p class="role">Games Master</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">04</span>
+    </div>
+    <div class="trainer-card reveal">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0079.jpg" alt="Mx Code Black" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Mx Code Black</h3>
+        <p class="role">Team Manager</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">05</span>
+    </div>
+    <div class="trainer-card reveal d1">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0080.jpg" alt="Nurse James" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Nurse James</h3>
+        <p class="role">Administrative Manager</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">06</span>
+    </div>
+    <div class="trainer-card reveal d2">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0081.jpg" alt="Barrister Ifeoma" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Barrister Ifeoma</h3>
+        <p class="role">Secretary</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">07</span>
+    </div>
+    <div class="trainer-card reveal d3">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0083.jpg" alt="Engineer Emmanuel" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Engr. Emmanuel</h3>
+        <p class="role">Graphic Manager</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">08</span>
+    </div>
+    <div class="trainer-card reveal">
+      <div class="trainer-img-wrapper"><img src="img/IMG-20260530-WA0084.jpg" alt="Nurse Nancy" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Nurse Nancy</h3>
+        <p class="role">Operations Manager</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">09</span>
+    </div>
+    <div class="trainer-card reveal d1">
+      <div class="trainer-img-wrapper"><img src="img/big choice.jpeg" alt="Big Choice" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Big Choice</h3>
+        <p class="role">Public Relations</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">10</span>
+    </div>
+    <div class="trainer-card reveal d2">
+      <div class="trainer-img-wrapper"><img src="img/coach ruth.jpeg" alt="Coach Ruth" loading="lazy"></div>
+      <div class="trainer-info">
+        <h3>Coach Ruth</h3>
+        <p class="role">Public Relations 2</p>
+      </div>
+      <span class="trainer-num" aria-hidden="true">11</span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CHAPTER 4 — STARS (CAROUSEL)
+     ===================================================== -->
+<section id="stars">
+  <div class="superstars reveal">
+    <div class="story-tag" style="justify-content:center">
+      <i class="fa-solid fa-star" aria-hidden="true"></i>
+      Chapter 4 · Striving for Greatness
+    </div>
+    <h2>Our <span class="accent">Stars</span></h2>
+    <p class="star-intro">Throughout history, exceptional players have risen above challenges, shattered records, and inspired millions around the world.</p>
+  </div>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="3500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/WhatsApp Image 2026-05-32.jpeg" class="d-block w-100" alt="Star player 1" loading="lazy">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Raising Champions</h5>
+          <p>Every great player started right where you are — on a court, with a dream.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/WhatsApp Image 2026-05-33.jpeg" class="d-block w-100" alt="Star player 2" loading="lazy">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Built on Discipline</h5>
+          <p>Hours of sweat on the court forge the character that wins off it.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/WhatsApp Image 2026-05-34.jpeg" class="d-block w-100" alt="Star player 3" loading="lazy">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>My Time is Now</h5>
+          <p>Onewin players don't wait for opportunity — they create it.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<!-- =====================================================
+     CHAPTER 5 — SCHEDULE
+     ===================================================== -->
+<section id="schedule">
+  <div class="section-header reveal">
+    <div class="story-tag">
+      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+      Chapter 5 · Get on Court
+    </div>
+    <h2>Shine Through <span class="accent">Basketball</span></h2>
+    <p class="section-intro">Located at FHE Goningora, Mary Immaculate Street, ACNA Church Auditorium. We operate a very flexible programme considering occupational and academic schedules.</p>
+  </div>
+
+  <div class="schedule-content">
+    <div class="schedule-info-box reveal reveal-left">
+      <div class="schedule-box-header">
+        <h3>Training Days</h3>
+      </div>
+      <div class="time-slots">
+        <div class="time-slot">
+          <span class="day">Mondays</span>
+          <span class="time">4:00 PM</span>
+        </div>
+        <div class="time-slot">
+          <span class="day">Thursdays</span>
+          <span class="time">4:00 PM</span>
+        </div>
+        <div class="time-slot">
+          <span class="day">Saturdays</span>
+          <span class="time">7:00 AM</span>
+        </div>
+      </div>
+      <p class="schedule-location">
+        <i class="fa-solid fa-location-dot" style="color:var(--red);margin-right:7px" aria-hidden="true"></i>
+        ACNA Church Auditorium, Mary Immaculate Street, FHE Goningora, Kaduna State, Nigeria.
+      </p>
+    </div>
+    <div class="schedule-image reveal reveal-right">
+      <img src="img/IMG_20260221_114130_763.jpg" alt="Training court" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CHAPTER 6 — NEWS & PROGRAMMES
+     ===================================================== -->
+<section id="news">
+  <div class="section-header reveal">
+    <div class="story-tag">
+      <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+      Chapter 6 · Stay Informed
+    </div>
+    <h2>Stay Informed <span class="accent">&amp; Push</span></h2>
+    <p class="section-intro">There is never a dull moment at Onewin. We offer a variety of events, activities, and competitions year in, year out.</p>
+  </div>
+
+  <div class="activities-card reveal">
+    <div class="activities-card-head">
+      <div class="icon-ball-sm" aria-hidden="true">
+        <i class="fa-solid fa-basketball"></i>
+      </div>
+      <h3>Our Core Programmes</h3>
+    </div>
+    <ul class="activities-list">
+      <li><span class="num" aria-hidden="true">01</span> Seminars &amp; Talkshows</li>
+      <li><span class="num" aria-hidden="true">02</span> Internal &amp; External Competitions</li>
+      <li><span class="num" aria-hidden="true">03</span> Friendly Matches &amp; Endurance Training (Hill Climbing)</li>
+      <li><span class="num" aria-hidden="true">04</span> Talent Shows, Hangouts &amp; Visitations</li>
+      <li><span class="num" aria-hidden="true">05</span> Bible Study, Guidance &amp; Counseling</li>
+    </ul>
+  </div>
+  <p class="social-prompt reveal">Follow our socials to keep up with the latest matches!</p>
+</section>
+
+<!-- =====================================================
+     CHAPTER 7 — FOOTER / CONTACT
+     ===================================================== -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/file_00000000da547243b186fd3eae3d44c4.png" alt="Onewin Logo" class="footer-logo" loading="lazy">
+      <h3>Onewin Basketball Foundation</h3>
+      <p class="tagline">Character · Discipline · Excellence</p>
+    </div>
+    <div class="footer-contacts">
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-link" aria-hidden="true"></i>
+        <a href="https://linktr.ee/onewinbasketballfoundation" target="_blank" rel="noopener">linktr.ee/onewinbasketball</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>ACNA Church Auditorium, Mary Immaculate Street, FHE Goningora, Kaduna State, Nigeria.</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:onewinbasketball@gmail.com">onewinbasketball@gmail.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        <a href="tel:+2348093460724">+234 (0) 809-346-0724</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Morales. All Rights Reserved. |
+      <a href="https://Morales310.github.io">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<!-- =====================================================
+     SCRIPTS
+     ===================================================== -->
+<script>
+/* ── SCROLL PROGRESS ── */
+const scrollBar = document.getElementById('scroll-bar');
+function updateProgress() {
+  const s = document.documentElement;
+  const pct = (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100;
+  scrollBar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+/* ── NAV SHRINK ── */
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── HAMBURGER ── */
+const hamBtn  = document.getElementById('ham-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+hamBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamBtn.classList.toggle('open', open);
+  hamBtn.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamBtn.classList.remove('open');
+    hamBtn.setAttribute('aria-expanded', false);
+  });
+});
+
+/* ── THEME TOGGLE ── */
+const themeBtn = document.getElementById('theme-btn');
+const root     = document.documentElement;
+let isDark     = true;
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeBtn.textContent = isDark ? '☀️' : '🌙';
+});
+
+/* ── SPARK PARTICLES ── */
+const sparksEl = document.getElementById('hero-sparks');
+function makeSpark() {
+  const s = document.createElement('div');
+  s.className = 'spark';
+  const size = 2 + Math.random() * 5;
+  s.style.cssText = [
+    'width:' + size + 'px',
+    'height:' + size + 'px',
+    'left:' + (Math.random() * 100) + '%',
+    'bottom:0',
+    '--dur:' + (3.5 + Math.random() * 4) + 's',
+    '--delay:' + (Math.random() * 4) + 's',
+    'background:' + (Math.random() > 0.5 ? '#e86820' : '#d1321e')
+  ].join(';');
+  sparksEl.appendChild(s);
+  // shorter lifespan and allow capped reuse to reduce DOM churn
+  setTimeout(() => s.remove(), 6000);
+}
+// cap concurrently spawned sparks to avoid jank on slower devices
+setInterval(() => { if (sparksEl.children.length < 36) makeSpark(); }, 350);
+
+/* ── CANVAS ANIMATION (bouncing balls + court lines) ── */
+(function() {
+  const canvas = document.getElementById('court-canvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H;
+  // Resize canvas with devicePixelRatio scaling and debounce via rAF
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = window.innerWidth;
+    const cssH = window.innerHeight;
+    W = Math.max(1, Math.floor(cssW * dpr));
+    H = Math.max(1, Math.floor(cssH * dpr));
+    canvas.width = W;
+    canvas.height = H;
+    canvas.style.width = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  let resizeRaf = null;
+  window.addEventListener('resize', () => {
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => { resize(); resizeRaf = null; });
+  }, { passive: true });
+
+  /* Bouncing balls */
+  const balls = Array.from({ length: 6 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    vx: (Math.random() - 0.5) * 2.2,
+    vy: (Math.random() - 0.5) * 2.2,
+    r: 12 + Math.random() * 16,
+    rot: 0,
+    rs: (Math.random() - 0.5) * 0.045
+  }));
+
+  function drawBall(b, isDk) {
+    const c = isDk ? 'rgba(232,104,32,' : 'rgba(180,80,20,';
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.rotate(b.rot);
+    ctx.beginPath();
+    ctx.arc(0, 0, b.r, 0, Math.PI * 2);
+    ctx.strokeStyle = c + '0.9)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    // seams
+    ctx.beginPath();
+    ctx.arc(0, 0, b.r * 0.96, -Math.PI / 2.8, Math.PI / 2.8);
+    ctx.strokeStyle = c + '0.55)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(-b.r, 0); ctx.lineTo(b.r, 0);
+    ctx.strokeStyle = c + '0.4)';
+    ctx.lineWidth = 0.7;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(0, -b.r); ctx.lineTo(0, b.r);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    const dk = root.getAttribute('data-theme') !== 'light';
+    balls.forEach(b => {
+      b.x += b.vx; b.y += b.vy; b.rot += b.rs;
+      if (b.x - b.r < 0 || b.x + b.r > W) b.vx *= -1;
+      if (b.y - b.r < 0 || b.y + b.r > H) b.vy *= -1;
+      drawBall(b, dk);
+    });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ── CURSOR BALL (desktop) ── */
+(function() {
+  const ball = document.getElementById('cursor-ball');
+  let mx = 0, my = 0, bx = 0, by = 0, rot = 0;
+  let vis = false;
+  if (!window.matchMedia('(hover:hover)').matches) return;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    if (!vis) { ball.style.opacity = '0.92'; vis = true; }
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => {
+    ball.style.opacity = '0'; vis = false;
+  });
+  (function animate() {
+    bx += (mx - bx) * 0.13;
+    by += (my - by) * 0.13;
+    rot += 2.5;
+    ball.style.left = bx + 'px';
+    ball.style.top  = by + 'px';
+    ball.style.transform = 'translate(-50%,-50%) rotate(' + rot + 'deg)';
+    requestAnimationFrame(animate);
+  })();
+  /* Click ripple */
+  document.addEventListener('click', e => {
+    const r = document.createElement('div');
+    r.style.cssText = 'position:fixed;left:'+e.clientX+'px;top:'+e.clientY+'px;width:36px;height:36px;border-radius:50%;border:2px solid var(--red);transform:translate(-50%,-50%) scale(0);animation:ripple 0.55s ease-out forwards;pointer-events:none;z-index:9997';
+    document.body.appendChild(r);
+    setTimeout(() => r.remove(), 600);
+  });
+  if (!document.getElementById('ripple-style')) {
+    const st = document.createElement('style');
+    st.id = 'ripple-style';
+    st.textContent = '@keyframes ripple{to{transform:translate(-50%,-50%) scale(3.5);opacity:0}}';
+    document.head.appendChild(st);
+  }
+})();
+
+/* ── SCROLL REVEAL ── */
+(function() {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+})();
+</script>
+</body>
+</html>
